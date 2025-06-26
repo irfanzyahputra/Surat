@@ -5,38 +5,91 @@
   <title>Surat Cinta untuk Jejeng</title>
   <style>
     body {
-      background-color: #fff0f5;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 50px;
       display: none;
+      overflow: hidden;
     }
-    .isi {
-      display: none;
+
+    .container {
+      padding: 50px 20px;
+      position: relative;
+      z-index: 10;
     }
+
     h1 {
       color: #e91e63;
+      font-size: 2em;
     }
+
     p {
       font-size: 1.2em;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .isi {
+      display: none;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 15px #f8bbd0;
+    }
+
+    .flower {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-image: url('https://cdn.pixabay.com/photo/2014/04/02/10/55/rose-306328_960_720.png');
+      background-size: cover;
+      animation: fall linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="isi">
-    <h1>💌 Untuk Jejeng 💌</h1>
-    <p>Aku sayang kamu, Jejeng 💖</p>
-    <p>- Muhammad Irfan Syahputra</p>
+  <div class="container isi">
+    <h1>💌 Untuk Jejeng Tercinta 💌</h1>
+    <p>Sejak aku mengenalmu, hariku selalu berbunga.</p>
+    <p>Jejeng, kamu seperti pagi yang menenangkan dan malam yang meneduhkan.</p>
+    <p>Terima kasih sudah hadir dalam hidupku.</p>
+    <p>Aku sayang kamu, Jejeng 💗</p>
+    <p><i>- Muhammad Irfan Syahputra</i></p>
   </div>
 
   <script>
+    // Minta password dulu
     const password = prompt("Masukkan kata sandi untuk membaca surat:");
+
     if (password === "buka") {
       document.body.style.display = "block";
       document.querySelector('.isi').style.display = "block";
+
+      // Buat bunga jatuh
+      for (let i = 0; i < 30; i++) {
+        let flower = document.createElement('div');
+        flower.className = 'flower';
+        flower.style.left = Math.random() * 100 + 'vw';
+        flower.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        flower.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(flower);
+      }
+
     } else {
       document.body.style.display = "block";
-      document.body.innerHTML = "<h2>Ups! Ini bukan untukmu 😅</h2>";
+      document.body.innerHTML = "<h2 style='color:#e91e63;'>Ups! Ini bukan untukmu 😅</h2>";
     }
   </script>
 </body>
