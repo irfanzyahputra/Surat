@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Surat Cinta untuk Jejeng</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      display: none;
+    }
+    .isi {
+      display: none;
+    }
+    h1 {
+      color: #e91e63;
+    }
+    p {
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="isi">
+    <h1>💌 Untuk Jejeng 💌</h1>
+    <p>Aku sayang kamu, Jejeng 💖</p>
+    <p>- Muhammad Irfan Syahputra</p>
+  </div>
+
+  <script>
+    const password = prompt("Masukkan kata sandi untuk membaca surat:");
+    if (password === "buka") {
+      document.body.style.display = "block";
+      document.querySelector('.isi').style.display = "block";
+    } else {
+      document.body.style.display = "block";
+      document.body.innerHTML = "<h2>Ups! Ini bukan untukmu 😅</h2>";
+    }
+  </script>
+</body>
+</html>
